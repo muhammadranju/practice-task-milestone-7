@@ -9,7 +9,7 @@ function Counter() {
     setIsVisible(true);
     setTimeout(() => {
       setIsVisible(false);
-    }, 1000);
+    }, 700);
   };
 
   function handelMessage() {
@@ -24,11 +24,11 @@ function Counter() {
       </button>
 
       <span
-        className={`text-2xl font-semibold my-5 b p-4 border-[2px] border-sky-500 rounded-xl  ${
+        className={`text-2xl font-semibold my-5 b p-4 border-[2px] absolute border-sky-500 rounded-xl lg:bottom-20 lg:right-20 bottom-10 right-10 bg-white ${
           isVisible ? "" : "hidden"
         }`}
       >
-        Added <span className="text-sky-500 font-bold text-3xl">{count}</span>{" "}
+        Added <span className="text-sky-500 font-bold text-3xl">{count} </span>
         times
       </span>
     </>
