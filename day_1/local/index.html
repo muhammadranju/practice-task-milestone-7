@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="w-11/12 mx-auto mt-10 xl:container">
+      <div class="lg:space-y-0 space-y-3">
+        <input
+          type="text"
+          id="productName"
+          placeholder="Type your name"
+          class="input input-bordered lg:w-0 w-full"
+        />
+        <input
+          type="text"
+          id="productQty"
+          placeholder="Type your age"
+          class="input input-bordered lg:w-0 w-full"
+        />
+        <input
+          type="text"
+          id="about"
+          placeholder="Type your about"
+          class="input input-bordered lg:w-0 w-full"
+        />
+        <input
+          type="file"
+          class="file-input file-input-bordered lg:w-0 w-full"
+          id="productImage"
+        />
+        <input
+          type="submit"
+          onclick="addProduct()"
+          class="btn lg:w-0 w-full"
+          value="Submit"
+        />
+      </div>
+
+      <div
+        class="grid lg:grid-cols-4 grid-cols-1 lg:w-4/5 p-4 rounded-xl gap-5"
+        id="displayData"
+      ></div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>
