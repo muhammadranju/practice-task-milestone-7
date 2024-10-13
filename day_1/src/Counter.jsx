@@ -9,7 +9,7 @@ function Counter() {
     setIsVisible(true);
     setTimeout(() => {
       setIsVisible(false);
-    }, 700);
+    }, 1000);
   };
 
   function handelMessage() {

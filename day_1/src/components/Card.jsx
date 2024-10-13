@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Images from "./Images";
 import Model from "./ui/Model";
 import Adopt from "./ui/Adopt";
+import Spinner from "./ui/Spinner";
 const url = "https://openapi.programming-hero.com/api/peddy";
 
 function Card() {
@@ -9,11 +10,14 @@ function Card() {
   const [petImages, setPetImages] = useState([]);
   const [petDetails, setPetDetails] = useState({});
   const [counter, setCounter] = useState(3);
+  const [isAdopted, setIsAdopted] = useState(false);
 
   const handelPosts = async () => {
     const response = await fetch(`${url}/pets`);
     const data = await response.json();
-    setPosts(data.pets);
+    setTimeout(() => {
+      setPosts(data.pets);
+    }, 2000);
   };
 
   function handelImage(image) {
@@ -31,16 +35,17 @@ function Card() {
 
   const handelAdoptModel = () => {
     document.getElementById("adoptChallengeModal").showModal();
-
     const interVal = setInterval(() => {
-      setCounter((prev) => prev - 1);
+      setCounter((prev) => {
+        if (prev <= 1) {
+          document.getElementById("adoptChallengeModal").close();
+          clearInterval(interVal);
+          setIsAdopted(true);
+          return 3;
+        }
+        return prev - 1;
+      });
     }, 1000);
-
-    if (counter <= 0) {
-      document.getElementById("adoptChallengeModal").close();
-      clearInterval(interVal);
-      setCounter(0);
-    }
   };
 
   useEffect(() => {
@@ -49,6 +54,7 @@ function Card() {
 
   return (
     <>
+      <Spinner />
       <div className="grid lg:grid-cols-3 grid-cols-1 lg:w-4/5 border p-4 rounded-xl gap-5">
         {posts.map((post, index) => (
           <div key={post.id || index} className="card card-compact shadow">
@@ -99,8 +105,9 @@ function Card() {
                 <button
                   onClick={handelAdoptModel}
                   className="btn text-[#0f7d85] border-0 font-bold bg-transparent shadow px-7"
+                  disabled={isAdopted}
                 >
-                  Adopt
+                  {isAdopted ? "Adopted" : "Adopt"}
                 </button>
                 <button
                   onClick={() => handlePetDetails(post.petId)}
