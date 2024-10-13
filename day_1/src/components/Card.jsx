@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import Images from "./Images";
 import Model from "./ui/Model";
+import Adopt from "./ui/Adopt";
 const url = "https://openapi.programming-hero.com/api/peddy";
 
 function Card() {
   const [posts, setPosts] = useState([]);
   const [petImages, setPetImages] = useState([]);
   const [petDetails, setPetDetails] = useState({});
+  const [counter, setCounter] = useState(3);
 
   const handelPosts = async () => {
     const response = await fetch(`${url}/pets`);
@@ -25,6 +27,20 @@ function Card() {
     console.log(data);
     setPetDetails(data?.petData);
     document.getElementById("petModel").showModal();
+  };
+
+  const handelAdoptModel = () => {
+    document.getElementById("adoptChallengeModal").showModal();
+
+    const interVal = setInterval(() => {
+      setCounter((prev) => prev - 1);
+    }, 1000);
+
+    if (counter <= 0) {
+      document.getElementById("adoptChallengeModal").close();
+      clearInterval(interVal);
+      setCounter(0);
+    }
   };
 
   useEffect(() => {
@@ -80,7 +96,10 @@ function Card() {
                 >
                   <i className="fa-regular fa-thumbs-up"></i>
                 </button>
-                <button className="btn text-[#0f7d85] border-0 font-bold bg-transparent shadow px-7">
+                <button
+                  onClick={handelAdoptModel}
+                  className="btn text-[#0f7d85] border-0 font-bold bg-transparent shadow px-7"
+                >
                   Adopt
                 </button>
                 <button
@@ -100,6 +119,7 @@ function Card() {
         ))}
       </div>
       <Model pet={petDetails} />
+      <Adopt counter={counter} />
     </>
   );
 }
