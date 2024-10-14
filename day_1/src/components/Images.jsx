@@ -1,8 +1,16 @@
-// eslint-disable-next-line react/prop-types
-function Images({ image }) {
-  return (
-    <img src={image} className="rounded-xl w-full h-28 object-cover" alt="" />
-  );
-}
+import { signal } from "@preact/signals-react";
 
-export default Images;
+export const setImages = signal([]);
+
+// eslint-disable-next-line no-unused-vars
+export default function Images({ img }) {
+  console.log();
+  return setImages.value.map((img, index) => (
+    <img
+      key={index}
+      src={img}
+      className="rounded-xl w-full h-28 object-cover"
+      alt=""
+    />
+  ));
+}
