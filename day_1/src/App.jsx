@@ -1,8 +1,8 @@
 // import Card from "./components/Card";
 import Hero from "./components/Hero";
-import Images from "./components/Images";
 import Navbar from "./components/Navbar";
 import Cards from "./components/ui/Cards";
+import Category from "./components/ui/Category";
 
 function App() {
   return (
@@ -17,13 +17,21 @@ function App() {
         </section>
         {/* hero section */}
 
+        <section className="grid lg:grid-cols-4 grid-cols-2 justify-between lg:gap-x-44 gap-x-5 lg:gap-y-10 gap-y-4 mt-8 lg:max-w-full mx-auto ">
+          <Category />
+        </section>
+
+        <section className="flex justify-between items-center lg:max-w-full mx-auto">
+          <h4 className="text-2xl font-bold">Best Deal For you</h4>
+          <button
+            className="btn bg-[#0E7A81] text-white px-7 rounded-xl hover:bg-[#0c6369]"
+            id="sortByPiceButton"
+          >
+            Sort by Price
+          </button>
+        </section>
         <section className="flex lg:flex-row flex-col lg:items-start lg:gap-x-5 mt-8">
-          <div className="grid lg:grid-cols-3 grid-cols-1 lg:w-4/5 border p-4 rounded-xl gap-5">
-            <Cards />
-          </div>
-          <div className="lg:w-1/5 border p-4 lg:mt-0 mt-5 rounded-xl grid grid-cols-2 gap-5 relative">
-            <Images />
-          </div>
+          <Cards />
         </section>
       </main>
     </>
