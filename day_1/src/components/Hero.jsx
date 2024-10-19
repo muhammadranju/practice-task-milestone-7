@@ -18,11 +18,7 @@ function Hero() {
         </p>
         <button className="btn bg-[#0f7d85] px-7 text-white">View More</button>
       </div>
-      <img
-        src="https://batch10-assignment-6.netlify.app/images/pet.webp"
-        alt="hero"
-        className="rounded-xl"
-      />
+      <img src="../../images/pet.webp" alt="hero" className="rounded-xl" />
     </div>
   );
 }

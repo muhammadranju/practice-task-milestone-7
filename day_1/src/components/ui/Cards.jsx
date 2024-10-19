@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import Card from "../Card";
-import Images from "../Images";
 const url = "https://openapi.programming-hero.com/api/peddy";
 
-const Cards = () => {
+const Cards = (props) => {
   const [posts, setPosts] = useState([]);
   const [petDetails, setPetDetails] = useState({});
   const [petImages, setPetImages] = useState([]);
@@ -15,6 +15,8 @@ const Cards = () => {
     const data = await response.json();
     setPosts(data.pets);
   };
+
+  props.handelImagesByCard(petImages);
 
   function handelImage(image) {
     setPetImages((prevImages) => [...prevImages, image]);
@@ -48,24 +50,19 @@ const Cards = () => {
   }, []);
   return (
     <>
-      <div className="grid lg:grid-cols-3 grid-cols-1 lg:w-4/5 border p-4 rounded-xl gap-5">
-        {posts.map((post) => (
-          <Card
-            key={post.petId}
-            post={post}
-            handelImage={handelImage}
-            handelAdoptModel={handelAdoptModel}
-            handlePetDetails={handlePetDetails}
-            petDetails={petDetails}
-            petImages={petImages}
-            counter={counter}
-            isAdopted={isAdopted[post.petId] || false}
-          />
-        ))}
-      </div>
-      <div className="lg:w-1/5 border p-4 lg:mt-0 mt-5 rounded-xl grid grid-cols-2 gap-5 relative">
-        <Images petImages={petImages} />
-      </div>
+      {posts.map((post) => (
+        <Card
+          key={post.petId}
+          post={post}
+          handelImage={handelImage}
+          handelAdoptModel={handelAdoptModel}
+          handlePetDetails={handlePetDetails}
+          petDetails={petDetails}
+          petImages={petImages}
+          counter={counter}
+          isAdopted={isAdopted[post.petId] || false}
+        />
+      ))}
     </>
   );
 };

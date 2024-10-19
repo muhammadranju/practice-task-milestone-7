@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 export default function Images({ petImages }) {
   return petImages.map((img, index) => (
     <img
