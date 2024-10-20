@@ -29,10 +29,14 @@ const Countries = () => {
           Countries: {countries.length > 0 ? countries.length : "Loading..."}
         </h1>
         <button
-          className="bg-blue-500 text-white p-3 mb-5 px-5 font-bold hover:bg-blue-700 rounded-lg "
+          className={` text-white p-3 mb-5 px-5 font-bold  rounded-lg ${
+            isGridView
+              ? "bg-blue-500 hover:bg-blue-700 "
+              : "bg-green-500 hover:bg-green-700 "
+          }`}
           onClick={() => setIsGridView(!isGridView)}
         >
-          {isGridView ? "Grid View" : "List View"}
+          {isGridView ? "List View" : "Grid View"}
         </button>
 
         {!isGridView && (
