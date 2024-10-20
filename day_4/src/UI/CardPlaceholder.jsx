@@ -2,9 +2,9 @@ const CardPlaceholder = () => {
   return (
     <div
       role="status"
-      className="max-w-sm p-4 border rounded-xl shadow animate-pulse md:p-6 "
+      className="max-w-sm p-4 border border-gray-300 rounded-xl shadow-lg animate-pulse md:p-6 "
     >
-      <div className="flex items-center justify-center w-full h-64  bg-gray-300 rounded-xl dark:bg-gray-400">
+      <div className="flex items-center justify-center w-full h-64 object-cover   bg-gray-300 rounded-xl dark:bg-gray-400">
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-300"
           aria-hidden="true"
