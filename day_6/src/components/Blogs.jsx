@@ -13,11 +13,11 @@ const Blogs = () => {
     getData();
   }, []);
   return (
-    <>
+    <div className="flex flex-col gap-y-3">
       {blogs.map((blog) => (
         <BlogList key={blog.id} blog={blog} />
       ))}
-    </>
+    </div>
   );
 };
 
