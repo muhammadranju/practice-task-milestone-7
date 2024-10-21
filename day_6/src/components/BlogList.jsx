@@ -55,7 +55,7 @@ const BlogList = ({ blog }) => {
       <span className="text-indigo-700 font-bold underline underline-offset-2 my-5 cursor-pointer">
         Mark as read
       </span>
-      <hr className="border-gray-300 mt-8" />
+      <hr className="border-gray-300 my-8" />
     </div>
   );
 };

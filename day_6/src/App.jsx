@@ -8,7 +8,7 @@ function App() {
     <div className="container mx-auto">
       <Header />
       <div className="flex gap-5">
-        <div>
+        <div className="w-full">
           <Blogs />
         </div>
         <div className=" w-2/5">
