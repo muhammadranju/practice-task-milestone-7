@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const BlogList = ({ blog }) => {
-  console.log(blog);
+const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
   return (
     <div className=" rounded-xl ">
       <img className=" rounded-lg " src={blog.image_url} alt="" />
@@ -23,11 +22,21 @@ const BlogList = ({ blog }) => {
           <span className="text-lg font-medium text-gray-500">
             {blog.read_time} min read
           </span>
-          <img
-            className="w-6 text-gray-500 h-full cursor-pointer"
-            src="../../images/ribbon.png"
-            alt=""
-          />
+          {isBookmarked ? (
+            <img
+              onClick={() => handelReadTime(blog.read_time)}
+              className="w-6 text-gray-500 h-full cursor-pointer"
+              src="../../images/ribbon-color.png"
+              alt=""
+            />
+          ) : (
+            <img
+              onClick={() => handelReadTime(blog.read_time)}
+              className="w-6 text-gray-500 h-full cursor-pointer"
+              src="../../images/ribbon.png"
+              alt=""
+            />
+          )}
         </div>
       </div>
       <h1 className="font-bold text-4xl w-4/5 my-5">{blog.title}</h1>
@@ -52,7 +61,10 @@ const BlogList = ({ blog }) => {
           ))}
         </div>
       </div>
-      <span className="text-indigo-700 font-bold underline underline-offset-2 my-5 cursor-pointer">
+      <span
+        onClick={() => handelMarkAsRead(blog.title)}
+        className="text-indigo-700 font-bold underline underline-offset-2 my-5 cursor-pointer"
+      >
         Mark as read
       </span>
       <hr className="border-gray-300 my-8" />

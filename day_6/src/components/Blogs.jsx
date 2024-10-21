@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 import BlogCardPlaceholder from "./BlogCardPlaceholder";
-const Blogs = () => {
+const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
   const [blogs, setBlogs] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,15 @@ const Blogs = () => {
         </>
       )}
       {!isLoading &&
-        blogs.map((blog) => <BlogList key={blog.id} blog={blog} />)}
+        blogs.map((blog) => (
+          <BlogList
+            key={blog.id}
+            blog={blog}
+            handelReadTime={handelReadTime}
+            handelMarkAsRead={handelMarkAsRead}
+            isBookmarked={isBookmarked}
+          />
+        ))}
     </div>
   );
 };
