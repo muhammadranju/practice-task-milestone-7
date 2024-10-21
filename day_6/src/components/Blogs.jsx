@@ -6,13 +6,16 @@ const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
   const [blogs, setBlogs] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
+
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2500);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(
         "https://raw.githubusercontent.com/muhammadranju/practice-task-milestone-7/refs/heads/main/day_6/public/blog.json"
       );
       const data = await res.json();
-      setIsLoading(false);
       setBlogs(data);
     };
     getData();

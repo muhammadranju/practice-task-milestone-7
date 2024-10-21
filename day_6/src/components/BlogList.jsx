@@ -3,7 +3,7 @@
 const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
   return (
     <div className=" rounded-xl ">
-      <img className=" rounded-lg " src={blog.image_url} alt="" />
+      <img className=" rounded-lg  w-fit" src={blog.image_url} alt="" />
       <div className="flex items-center justify-between gap-5 mt-8">
         <div className="flex gap-5 items-center">
           <img
@@ -39,11 +39,13 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
           )}
         </div>
       </div>
-      <h1 className="font-bold text-4xl w-4/5 my-5">{blog.title}</h1>
+      <h1 className="font-bold lg:text-4xl text-2xl lg:w-4/5 my-5">
+        {blog.title}
+      </h1>
       <p className="text-gray-700 my-5 font-medium text-lg">
         {blog.excerpt}...
       </p>
-      <div className="font-medium  text-gray-500 my-5 flex justify-between gap-2">
+      <div className="font-medium  text-gray-500 my-5 flex lg:flex-row flex-col justify-between gap-2">
         <div className="flex gap-2">
           {blog.tags.map((tag) => (
             <span key={tag}>#{tag}</span>

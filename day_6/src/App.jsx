@@ -18,9 +18,9 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="lg:w-11/12 md:w-11/12 w-11/12 xl:container mx-auto ">
       <Header />
-      <div className="flex gap-5">
+      <div className="flex lg:flex-row flex-col-reverse gap-5">
         <div className="w-full">
           <Blogs
             handelReadTime={handelReadTime}
@@ -28,7 +28,7 @@ function App() {
             isBookmarked={isBookmarked}
           />
         </div>
-        <div className=" w-2/5">
+        <div className=" lg:w-2/5 ">
           <Bookmark readTime={readTime} markAsRead={markAsRead} />
         </div>
       </div>

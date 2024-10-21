@@ -1,6 +1,6 @@
 const BlogCardPlaceholder = () => {
   return (
-    <div>
+    <div className="my-5">
       <div
         role="status"
         className="rounded  animate-pulse  dark:border-gray-500 space-y-5"
