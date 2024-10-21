@@ -40,7 +40,7 @@ const Countries = () => {
         </button>
 
         {!isGridView && (
-          <div className="grid grid-cols-1 gap-4 ">
+          <div className="grid grid-cols-1  gap-4 ">
             {!isLoading &&
               countries.map((country) => (
                 <CountryList key={country.cca3} country={country} />
@@ -49,7 +49,7 @@ const Countries = () => {
         )}
 
         {isGridView && (
-          <div className="grid grid-cols-4 gap-4 ">
+          <div className="grid lg:grid-cols-4 grid-cols-1 gap-4 lg:px-0 px-2 ">
             {isLoading && (
               <>
                 <CardPlaceholder />

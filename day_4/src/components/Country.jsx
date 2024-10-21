@@ -1,9 +1,23 @@
 /* eslint-disable react/prop-types */
 
+import { useState } from "react";
+
 const Country = ({ country }) => {
-  console.log(country);
+  const [isVisited, setIsVisited] = useState(false);
+  const [isMark, setIsMark] = useState(false);
+
+  const handelVisit = () => {
+    setIsVisited(!isVisited);
+  };
+  const handelMark = () => {
+    setIsMark(!isMark);
+  };
   return (
-    <div className="border rounded-xl shadow-md p-6 space-y-4 bg-slate-100">
+    <div
+      className={`border rounded-xl shadow-md p-6 space-y-4 ${
+        isVisited && isMark ? "bg-stone-300" : "bg-slate-100"
+      } `}
+    >
       <img
         className="w-full h-64 object-cover rounded-xl"
         src={country.flags.svg}
@@ -37,17 +51,31 @@ const Country = ({ country }) => {
           )}
           {country?.fifa && (
             <li>
-              FIFA: <span className="font-bold">{country?.fifa}</span>
+              Sorted: <span className="font-bold">{country?.fifa}</span>
             </li>
           )}
         </ul>
       </div>
       <div className="flex justify-around">
-        <button className="bg-blue-500 text-white p-3 px-5 font-bold hover:bg-blue-700 rounded-lg ">
-          Visited
+        <button
+          onClick={handelVisit}
+          className={`text-white p-3 px-5 font-bold rounded-lg ${
+            isVisited
+              ? "bg-blue-700  hover:bg-blue-700"
+              : "bg-blue-500  hover:bg-blue-700"
+          }`}
+        >
+          {isVisited ? "Visited" : "Visit"}
         </button>
-        <button className="bg-green-500 text-white p-3 px-5 font-bold hover:bg-green-700 rounded-lg ">
-          Mark
+        <button
+          onClick={handelMark}
+          className={` text-white p-3 px-5 font-bold  rounded-lg ${
+            isMark
+              ? "hover:bg-green-700 bg-green-700"
+              : "hover:bg-green-700 bg-green-500"
+          }`}
+        >
+          {isMark ? "Marked" : "Mark"}
         </button>
       </div>
     </div>

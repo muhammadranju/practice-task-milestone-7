@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "title": "The Ultimate Guide to Modern Web Development",
+    "author": {
+      "name": "Jane Doe",
+      "profile_image_url": "./images/author/1.jpeg"
+    },
+    "published_date": "2024-10-21",
+    "last_updated": "2024-10-21",
+    "content": "<p>Welcome to the ultimate guide to modern web development...</p>",
+    "excerpt": "Learn about the latest tools and best practices in web development for 2024.",
+    "tags": ["web development", "javascript", "react", "node.js"],
+    "categories": ["Development", "Technology"],
+    "image_url": "./images/1.webp"
+  },
+  {
+    "id": 2,
+    "title": "Top 10 JavaScript Frameworks for 2024",
+    "author": {
+      "name": "John Smith",
+      "profile_image_url": "./images/author/2.webp"
+    },
+    "published_date": "2024-10-18",
+    "last_updated": "2024-10-20",
+    "content": "<p>Here are the top JavaScript frameworks to watch out for in 2024...</p>",
+    "excerpt": "Discover the best JavaScript frameworks for modern web development.",
+    "tags": ["javascript", "frameworks", "development"],
+    "categories": ["Development", "Programming"],
+    "image_url": "./images/9.webp"
+  },
+  {
+    "id": 3,
+    "title": "Mastering CSS Grid Layout in Modern Web Design",
+    "author": {
+      "name": "Emily Clark",
+      "profile_image_url": "./images/author/3.jpeg"
+    },
+    "published_date": "2024-09-30",
+    "last_updated": "2024-10-01",
+    "content": "<p>CSS Grid is a powerful tool for creating responsive layouts...</p>",
+    "excerpt": "Learn how to use CSS Grid to design beautiful, responsive web layouts.",
+    "tags": ["CSS", "grid", "web design"],
+    "categories": ["Design", "CSS"],
+    "image_url": "./images/2.webp"
+  },
+  {
+    "id": 4,
+    "title": "React vs Vue: Which Framework to Choose in 2024?",
+    "author": {
+      "name": "Michael Johnson",
+      "profile_image_url": "./images/author/4.webp"
+    },
+    "published_date": "2024-10-10",
+    "last_updated": "2024-10-12",
+    "content": "<p>React and Vue are two of the most popular frameworks in 2024...</p>",
+    "excerpt": "Compare React and Vue to decide which is best for your project in 2024.",
+    "tags": ["react", "vue", "javascript", "frameworks"],
+    "categories": ["Development", "Frameworks"],
+    "image_url": "./images/3.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Responsive Web Design: Best Practices for 2024",
+    "author": {
+      "name": "Sarah Lee",
+      "profile_image_url": "./images/author/5.webp"
+    },
+    "published_date": "2024-09-25",
+    "last_updated": "2024-09-27",
+    "content": "<p>Responsive design is more important than ever in 2024...</p>",
+    "excerpt": "Learn the best practices for building responsive websites in 2024.",
+    "tags": ["responsive design", "css", "web design"],
+    "categories": ["Design", "CSS"],
+    "image_url": "./images/4.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Vue.js Performance Optimization Tips",
+    "author": {
+      "name": "Tom Hanks",
+      "profile_image_url": "./images/author/6.jpeg"
+    },
+    "published_date": "2024-08-20",
+    "last_updated": "2024-08-22",
+    "content": "<p>Optimize the performance of your Vue.js applications with these tips...</p>",
+    "excerpt": "Boost the performance of your Vue.js apps with these tips and tricks.",
+    "tags": ["vue.js", "performance", "optimization"],
+    "categories": ["Development", "JavaScript"],
+    "image_url": "./images/7.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Flexbox vs CSS Grid: Which Layout System is Better?",
+    "author": {
+      "name": "Emily Watson",
+      "profile_image_url": "./images/author/7.webp"
+    },
+    "published_date": "2024-07-30",
+    "last_updated": "2024-08-01",
+    "content": "<p>Flexbox and CSS Grid are two powerful layout systems...</p>",
+    "excerpt": "Compare Flexbox and CSS Grid to determine the best layout system for your project.",
+    "tags": ["flexbox", "css grid", "layouts"],
+    "categories": ["Design", "CSS"],
+    "image_url": "./images/5.jpg"
+  },
+  {
+    "id": 8,
+    "title": "The Future of Web Design: Trends for 2024",
+    "author": {
+      "name": "Daniel Craig",
+      "profile_image_url": "./images/author/8.webp"
+    },
+    "published_date": "2024-10-01",
+    "last_updated": "2024-10-03",
+    "content": "<p>Stay ahead of the curve with the latest web design trends for 2024...</p>",
+    "excerpt": "Explore the emerging web design trends that will dominate 2024.",
+    "tags": ["web design", "trends", "UI/UX"],
+    "categories": ["Design", "Trends"],
+    "image_url": "./images/6.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Node.js Security Best Practices",
+    "author": {
+      "name": "Chris Evans",
+      "profile_image_url": "./images/author/9.webp"
+    },
+    "published_date": "2024-09-15",
+    "last_updated": "2024-09-17",
+    "content": "<p>Security is a top concern when developing Node.js applications...</p>",
+    "excerpt": "Learn the best security practices for building secure Node.js applications.",
+    "tags": ["node.js", "security", "backend"],
+    "categories": ["Development", "Node.js"],
+    "image_url": "./images/8.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Top 5 Node.js Frameworks to Consider in 2024",
+    "author": {
+      "name": "David Beckham",
+      "profile_image_url": "./images/author/10.webp"
+    },
+    "published_date": "2024-09-05",
+    "last_updated": "2024-09-08",
+    "content": "<p>Choosing the right framework for your Node.js projects is crucial...</p>",
+    "excerpt": "Discover the top Node.js frameworks to consider for your next project in 2024.",
+    "tags": ["node.js", "frameworks", "development"],
+    "categories": ["Development", "Node.js"],
+    "image_url": "./images/10.jpg"
+  }
+]

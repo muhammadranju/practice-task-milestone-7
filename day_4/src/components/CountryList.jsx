@@ -3,14 +3,14 @@
 const CountryList = ({ country }) => {
   console.log(country);
   return (
-    <div className="flex border rounded-xl shadow-md p-6 space-x-4 bg-slate-100">
+    <div className="flex lg:flex-row flex-col border rounded-xl shadow-md p-6 lg:space-x-4 bg-slate-100">
       <img
-        className="w-5/12 h-96 object-cover rounded-xl"
+        className="lg:w-5/12 lg:h-96 object-cover rounded-xl"
         src={country.flags.svg}
         alt={`Flag of ${country?.name.common}`}
       />
 
-      <div className="space-y-5 text-xl font-medium">
+      <div className="lg:space-y-5 text-xl font-medium">
         <h3 className="font-semibold text-4xl">
           Name:{" "}
           <span className="text-4xl font-bold">{country?.name.common}</span>
@@ -54,7 +54,7 @@ const CountryList = ({ country }) => {
           </li>
         </ul>
 
-        <div className="flex flex-row w-44 space-x-3 justify-around">
+        <div className="flex flex-row lg:w-44 space-x-3 justify-around">
           <button className="bg-blue-500 text-white p-3 px-5 font-bold hover:bg-blue-700 rounded-lg ">
             Visited
           </button>
