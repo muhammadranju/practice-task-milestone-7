@@ -12,7 +12,8 @@
     "excerpt": "Learn about the latest tools and best practices in web development for 2024.",
     "tags": ["web development", "javascript", "react", "node.js"],
     "categories": ["Development", "Technology"],
-    "image_url": "./images/1.webp"
+    "image_url": "./images/1.webp",
+    "read_time": 5
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
     "excerpt": "Discover the best JavaScript frameworks for modern web development.",
     "tags": ["javascript", "frameworks", "development"],
     "categories": ["Development", "Programming"],
-    "image_url": "./images/9.webp"
+    "image_url": "./images/9.webp",
+    "read_time": 6
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
     "excerpt": "Learn how to use CSS Grid to design beautiful, responsive web layouts.",
     "tags": ["CSS", "grid", "web design"],
     "categories": ["Design", "CSS"],
-    "image_url": "./images/2.webp"
+    "image_url": "./images/2.webp",
+    "read_time": 9
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
     "excerpt": "Compare React and Vue to decide which is best for your project in 2024.",
     "tags": ["react", "vue", "javascript", "frameworks"],
     "categories": ["Development", "Frameworks"],
-    "image_url": "./images/3.jpg"
+    "image_url": "./images/3.jpg",
+    "read_time": 14
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
     "excerpt": "Learn the best practices for building responsive websites in 2024.",
     "tags": ["responsive design", "css", "web design"],
     "categories": ["Design", "CSS"],
-    "image_url": "./images/4.jpg"
+    "image_url": "./images/4.jpg",
+    "read_time": 12
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
     "excerpt": "Boost the performance of your Vue.js apps with these tips and tricks.",
     "tags": ["vue.js", "performance", "optimization"],
     "categories": ["Development", "JavaScript"],
-    "image_url": "./images/7.jpg"
+    "image_url": "./images/7.jpg",
+    "read_time": 10
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
     "excerpt": "Compare Flexbox and CSS Grid to determine the best layout system for your project.",
     "tags": ["flexbox", "css grid", "layouts"],
     "categories": ["Design", "CSS"],
-    "image_url": "./images/5.jpg"
+    "image_url": "./images/5.jpg",
+    "read_time": 8
   },
   {
     "id": 8,
@@ -117,7 +124,8 @@
     "excerpt": "Explore the emerging web design trends that will dominate 2024.",
     "tags": ["web design", "trends", "UI/UX"],
     "categories": ["Design", "Trends"],
-    "image_url": "./images/6.jpg"
+    "image_url": "./images/6.jpg",
+    "read_time": 6
   },
   {
     "id": 9,
@@ -132,7 +140,8 @@
     "excerpt": "Learn the best security practices for building secure Node.js applications.",
     "tags": ["node.js", "security", "backend"],
     "categories": ["Development", "Node.js"],
-    "image_url": "./images/8.jpg"
+    "image_url": "./images/8.jpg",
+    "read_time": 4
   },
   {
     "id": 10,
@@ -147,6 +156,7 @@
     "excerpt": "Discover the top Node.js frameworks to consider for your next project in 2024.",
     "tags": ["node.js", "frameworks", "development"],
     "categories": ["Development", "Node.js"],
-    "image_url": "./images/10.jpg"
+    "image_url": "./images/10.jpg",
+    "read_time": 11
   }
 ]
