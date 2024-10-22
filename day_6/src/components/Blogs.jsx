@@ -36,7 +36,7 @@ const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
             blog={blog}
             handelReadTime={handelReadTime}
             handelMarkAsRead={handelMarkAsRead}
-            isBookmarked={isBookmarked}
+            isBookmarked={isBookmarked[blogs.id]}
           />
         ))}
     </div>

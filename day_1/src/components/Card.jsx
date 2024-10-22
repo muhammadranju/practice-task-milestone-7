@@ -13,13 +13,11 @@ function Card({
 }) {
   return (
     <>
-      {/* <Spinner /> */}
-
       <div className="card card-compact shadow">
         <figure className="w-full h-64 p-3">
           <img
             src={post?.image}
-            className="w-full h-full object-cover rounded-xl "
+            className="w-full h-full object-cover rounded-xl"
             alt="Pet"
           />
         </figure>
@@ -29,23 +27,19 @@ function Card({
           <div className="flex flex-col text-gray-500 text-base ">
             <span className="text-base">
               <i className="fa-solid fa-table-cells mr-1"></i>
-              <span className="">Breed: {post?.breed ?? "Not Available"}</span>
+              <span>Breed: {post?.breed ?? "Not Available"}</span>
             </span>
             <span className="text-base">
               <i className="fa-regular fa-calendar mr-1"></i>
-              <span className="">
-                Birth: {post?.date_of_birth ?? "Not Available"}
-              </span>
+              <span>Birth: {post?.date_of_birth ?? "Not Available"}</span>
             </span>
             <span>
               <i className="fa-solid fa-mercury mr-1"></i>
-              <span className="">
-                Gender: {post?.gender ?? "Not Available"}
-              </span>
+              <span>Gender: {post?.gender ?? "Not Available"}</span>
             </span>
             <span>
               <i className="fa-solid fa-dollar-sign mr-1"></i>
-              <span className="">
+              <span>
                 Price: {post?.price ? post?.price + "$" : "Not Available"}
               </span>
             </span>
@@ -61,9 +55,9 @@ function Card({
             <button
               onClick={handelAdoptModel}
               className="btn text-[#0f7d85] border-0 font-bold bg-transparent shadow px-7"
-              disabled={isAdopted}
+              disabled={isAdopted} // Conditionally disable the button
             >
-              {isAdopted ? "Adopted" : "Adopt"}
+              {isAdopted ? "Adopted" : "Adopt"} {/* Toggle button text */}
             </button>
             <button
               onClick={() => handlePetDetails(post.petId)}

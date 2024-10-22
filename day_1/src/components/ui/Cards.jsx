@@ -8,7 +8,7 @@ const Cards = (props) => {
   const [petDetails, setPetDetails] = useState({});
   const [petImages, setPetImages] = useState([]);
   const [counter, setCounter] = useState(3);
-  const [isAdopted, setIsAdopted] = useState(false);
+  const [adoptedPets, setAdoptedPets] = useState({}); // Store adopted state for each pet
 
   const handelPosts = async () => {
     const response = await fetch(`${url}/pets`);
@@ -22,14 +22,15 @@ const Cards = (props) => {
     setPetImages((prevImages) => [...prevImages, image]);
   }
 
-  const handelAdoptModel = () => {
+  const handelAdoptModel = (petId) => {
     document.getElementById("adoptChallengeModal").showModal();
+    console.log("Okk");
     const interVal = setInterval(() => {
       setCounter((prev) => {
         if (prev <= 1) {
           document.getElementById("adoptChallengeModal").close();
           clearInterval(interVal);
-          setIsAdopted(!isAdopted);
+          setAdoptedPets((prev) => ({ ...prev, [petId]: true })); // Mark the pet as adopted
           return 3;
         }
         return prev - 1;
@@ -47,6 +48,7 @@ const Cards = (props) => {
   useEffect(() => {
     handelPosts();
   }, []);
+
   return (
     <>
       {posts.map((post) => (
@@ -54,12 +56,12 @@ const Cards = (props) => {
           key={post.petId}
           post={post}
           handelImage={handelImage}
-          handelAdoptModel={handelAdoptModel}
+          handelAdoptModel={() => handelAdoptModel(post.petId)}
           handlePetDetails={handlePetDetails}
           petDetails={petDetails}
           petImages={petImages}
           counter={counter}
-          isAdopted={isAdopted[post.petId] || false}
+          isAdopted={adoptedPets[post.petId]} // Pass the specific adoption status for each pet
         />
       ))}
     </>

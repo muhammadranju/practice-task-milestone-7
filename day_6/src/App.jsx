@@ -8,20 +8,21 @@ import { toast } from "react-toastify";
 function App() {
   const [readTime, setReadTime] = useState(0);
   const [markAsRead, setMarkAsRead] = useState([]);
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState({});
 
-  const handelMarkAsRead = (blog) => {
+  const handelMarkAsRead = (id, blog) => {
     setMarkAsRead((prev) => [...prev, blog]);
-
-    setIsBookmarked(!isBookmarked);
-
     toast.success("Bookmarked Success!");
+    setIsBookmarked((prev) => ({ ...prev, [id]: true }));
   };
+
   const handelReadTime = (id, readTime) => {
     setReadTime((prev) => prev + readTime);
+
     const remainingBookmark = markAsRead.filter(
       (bookmark) => bookmark.id !== id
     );
+
     setMarkAsRead(remainingBookmark);
     toast.success("Mark as read Success!");
   };

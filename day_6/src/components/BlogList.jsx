@@ -32,14 +32,14 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
           {isBookmarked ? (
             <button
               className="cursor-pointer"
-              onClick={() => handelMarkAsRead(blog)}
+              onClick={() => handelMarkAsRead(blog.id, blog)}
             >
               <IoBookmarks />
             </button>
           ) : (
             <button
               className="cursor-pointer"
-              onClick={() => handelMarkAsRead(blog)}
+              onClick={() => handelMarkAsRead(blog.id, blog)}
             >
               <IoBookmarksOutline />
             </button>
