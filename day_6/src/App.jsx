@@ -3,6 +3,7 @@ import "./App.css";
 import Blogs from "./components/Blogs";
 import Bookmark from "./components/Bookmark";
 import Header from "./components/Header";
+import { toast } from "react-toastify";
 
 function App() {
   const [readTime, setReadTime] = useState(0);
@@ -12,9 +13,13 @@ function App() {
   const handelReadTime = (readTime) => {
     setReadTime((prev) => prev + readTime);
     setIsBookmarked(!isBookmarked);
+
+    toast.success("Bookmarked Success!");
   };
   const handelMarkAsRead = (title) => {
     setMarkAsRead((prev) => [...prev, title]);
+
+    toast.success("Mark as read Success!");
   };
 
   return (

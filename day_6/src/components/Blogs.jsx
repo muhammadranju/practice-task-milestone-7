@@ -7,8 +7,6 @@ const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // setTimeout(() => {
-  // }, 2500);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(
@@ -20,6 +18,7 @@ const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
     };
     getData();
   }, []);
+
   return (
     <div className="flex flex-col gap-y-3">
       {isLoading && (

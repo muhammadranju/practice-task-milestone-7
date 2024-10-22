@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { IoBookmarks, IoBookmarksOutline } from "react-icons/io5";
 
 const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
   return (
@@ -22,24 +23,37 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
             </span>
           </div>
         </div>
-        <div className="flex justify-center items-center gap-1">
-          <span className="text-lg font-medium text-gray-500">
+        <div className="flex justify-center items-center gap-1 text-gray-500">
+          <span className="text-lg font-medium ">
             {blog.read_time} min read
           </span>
+
           {isBookmarked ? (
-            <img
+            <button
+              className="cursor-pointer"
               onClick={() => handelReadTime(blog.read_time)}
-              className="w-6 text-gray-500 h-full cursor-pointer"
-              src="../../images/ribbon-color.png"
-              alt={`Ribbon icon for ${blog.author.name}`}
-            />
+            >
+              <IoBookmarks />
+            </button>
           ) : (
-            <img
+            // <img
+
+            //   className="w-6 text-gray-500 h-full cursor-pointer"
+            //   src="../../images/ribbon-color.png"
+            //   alt={`Ribbon icon for ${blog.author.name}`}
+            // />
+            <button
+              className="cursor-pointer"
               onClick={() => handelReadTime(blog.read_time)}
-              className="w-6 text-gray-500 h-full cursor-pointer"
-              src="../../images/ribbon.png"
-              alt=""
-            />
+            >
+              <IoBookmarksOutline />
+            </button>
+            // <img
+            //   onClick={() => handelReadTime(blog.read_time)}
+            //   className="w-6 text-gray-500 h-full cursor-pointer"
+            //   src="../../images/ribbon.png"
+            //   alt=""
+            // />
           )}
         </div>
       </div>
@@ -67,12 +81,12 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
           ))}
         </div>
       </div>
-      <span
+      <button
         onClick={() => handelMarkAsRead(blog.title)}
-        className="text-indigo-700 font-bold underline underline-offset-2 my-5 cursor-pointer"
+        className="text-indigo-700 font-bold underline underline-offset-2 "
       >
         Mark as read
-      </span>
+      </button>
       <hr className="border-gray-300 my-8" />
     </div>
   );
