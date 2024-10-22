@@ -9,7 +9,6 @@ const Counter = () => {
       setCount(0);
     }
   };
-  console.log("Rendering", count);
   return (
     <div className="space-y-4">
       <div>

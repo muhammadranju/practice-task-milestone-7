@@ -10,15 +10,19 @@ function App() {
   const [markAsRead, setMarkAsRead] = useState([]);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  const handelReadTime = (readTime) => {
-    setReadTime((prev) => prev + readTime);
+  const handelMarkAsRead = (blog) => {
+    setMarkAsRead((prev) => [...prev, blog]);
+
     setIsBookmarked(!isBookmarked);
 
     toast.success("Bookmarked Success!");
   };
-  const handelMarkAsRead = (title) => {
-    setMarkAsRead((prev) => [...prev, title]);
-
+  const handelReadTime = (id, readTime) => {
+    setReadTime((prev) => prev + readTime);
+    const remainingBookmark = markAsRead.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setMarkAsRead(remainingBookmark);
     toast.success("Mark as read Success!");
   };
 

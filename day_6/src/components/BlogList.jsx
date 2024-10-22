@@ -2,6 +2,7 @@
 import { IoBookmarks, IoBookmarksOutline } from "react-icons/io5";
 
 const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
+  // console.log(blog.id);
   return (
     <div className=" rounded-xl ">
       <img
@@ -31,29 +32,17 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
           {isBookmarked ? (
             <button
               className="cursor-pointer"
-              onClick={() => handelReadTime(blog.read_time)}
+              onClick={() => handelMarkAsRead(blog)}
             >
               <IoBookmarks />
             </button>
           ) : (
-            // <img
-
-            //   className="w-6 text-gray-500 h-full cursor-pointer"
-            //   src="../../images/ribbon-color.png"
-            //   alt={`Ribbon icon for ${blog.author.name}`}
-            // />
             <button
               className="cursor-pointer"
-              onClick={() => handelReadTime(blog.read_time)}
+              onClick={() => handelMarkAsRead(blog)}
             >
               <IoBookmarksOutline />
             </button>
-            // <img
-            //   onClick={() => handelReadTime(blog.read_time)}
-            //   className="w-6 text-gray-500 h-full cursor-pointer"
-            //   src="../../images/ribbon.png"
-            //   alt=""
-            // />
           )}
         </div>
       </div>
@@ -82,7 +71,7 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
         </div>
       </div>
       <button
-        onClick={() => handelMarkAsRead(blog.title)}
+        onClick={() => handelReadTime(blog.id, blog.read_time)}
         className="text-indigo-700 font-bold underline underline-offset-2 "
       >
         Mark as read

@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 const CountryList = ({ country }) => {
-  console.log(country);
   return (
     <div className="flex lg:flex-row flex-col border rounded-xl shadow-md p-6 lg:space-x-4 bg-slate-100">
       <img

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 const Header = ({ count, imgArray }) => {
-  console.log(imgArray);
   return (
     <>
       <h1 className="text-3xl font-bold my-10">Bottles Available: {count} </h1>

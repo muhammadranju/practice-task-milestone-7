@@ -40,7 +40,6 @@ const Cards = (props) => {
   const handlePetDetails = async (id) => {
     const response = await fetch(`${url}/pet/${id}`);
     const data = await response.json();
-    console.log(data);
     setPetDetails(data?.petData);
     document.getElementById("petModel").showModal();
   };
