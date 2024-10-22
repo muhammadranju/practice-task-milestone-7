@@ -3,13 +3,17 @@
 const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
   return (
     <div className=" rounded-xl ">
-      <img className=" rounded-lg  w-fit" src={blog.image_url} alt="" />
+      <img
+        className=" rounded-lg  w-fit"
+        src={blog.image_url}
+        alt={`Blog image of ${blog.title}`}
+      />
       <div className="flex items-center justify-between gap-5 mt-8">
         <div className="flex gap-5 items-center">
           <img
             className="w-14 rounded-full h-14 object-cover "
             src={blog.author.profile_image_url}
-            alt=""
+            alt={`Author profile image of ${blog.author.name}`}
           />
           <div>
             <h3 className="font-bold text-xl">{blog.author.name}</h3>
@@ -27,7 +31,7 @@ const BlogList = ({ blog, handelMarkAsRead, handelReadTime, isBookmarked }) => {
               onClick={() => handelReadTime(blog.read_time)}
               className="w-6 text-gray-500 h-full cursor-pointer"
               src="../../images/ribbon-color.png"
-              alt=""
+              alt={`Ribbon icon for ${blog.author.name}`}
             />
           ) : (
             <img

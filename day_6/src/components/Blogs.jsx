@@ -7,9 +7,8 @@ const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 2500);
+  // setTimeout(() => {
+  // }, 2500);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(
@@ -17,6 +16,7 @@ const Blogs = ({ handelReadTime, handelMarkAsRead, isBookmarked }) => {
       );
       const data = await res.json();
       setBlogs(data);
+      setIsLoading(false);
     };
     getData();
   }, []);
