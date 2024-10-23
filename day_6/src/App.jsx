@@ -11,20 +11,32 @@ function App() {
   const [isBookmarked, setIsBookmarked] = useState({});
 
   const handelMarkAsRead = (id, blog) => {
-    setMarkAsRead((prev) => [...prev, blog]);
-    toast.success("Bookmarked Success!");
+    const alreadyMarked = markAsRead.some((item) => item.id === id);
+
+    if (!alreadyMarked) {
+      setMarkAsRead((prev) => [...prev, blog]);
+      toast.success("Bookmarked Success!");
+    } else {
+      toast.info("Already Marked as Read!");
+    }
+
     setIsBookmarked((prev) => ({ ...prev, [id]: true }));
   };
 
   const handelReadTime = (id, readTime) => {
-    setReadTime((prev) => prev + readTime);
+    const alreadyMarked = markAsRead.some((item) => item.id === id);
 
-    const remainingBookmark = markAsRead.filter(
-      (bookmark) => bookmark.id !== id
-    );
-
-    setMarkAsRead(remainingBookmark);
-    toast.success("Mark as read Success!");
+    if (alreadyMarked) {
+      setReadTime((prev) => prev + readTime);
+      const remainingBookmark = markAsRead.filter(
+        (bookmark) => bookmark.id !== id
+      );
+      setMarkAsRead(remainingBookmark);
+      toast.success("Mark as read Success!");
+      setIsBookmarked((prev) => ({ ...prev, [id]: false }));
+    } else {
+      toast.info("Already Marked as Read!");
+    }
   };
 
   return (
